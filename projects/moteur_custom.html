@@ -55,7 +55,35 @@
             </p>
             <p>
               Le projet étant en groupe, chaque membre devait travailler sur un module spécifique (ex. : rendu, physique, audio, gestion de scènes, etc.). 
-            </p>           
+            </p>
+            <br>
+            <h3>Architecture du moteur</h3>
+            <li>Core : Gestion de la boucle de jeu et des événements.</li>
+            <li>Rendu (Renderer) : Utilisation de DirectX 12 pour l’affichage 3D.</li>
+            <li>Gestion des ressources : Chargement des modèles, textures, shaders.</li>
+            <li>Scripting : Ajout d’un système de scripting pour faciliter le développement.</li>
+            <li>Interface utilisateur (UI) : Création d’un éditeur pour manipuler les objets de la scène.</li>
+            <br>
+            
+            <h3>DirectX 12 : Gestion du rendu</h3>
+            <li>Création d’une instance DXGI pour interagir avec le GPU.</li>
+            <li>Création d’un Device pour communiquer avec DirectX 12.</li>
+            <li>Création d’un Swap Chain pour gérer l’affichage des images.</li>
+            <li>Allocation des Command Queues, Command Lists et Command Allocators pour envoyer les commandes au GPU.</li>
+            <li>Mise en place d’un Descripteur de mémoire pour gérer les ressources (textures, buffers).</li>
+            <br>
+            
+            <h3>Pipeline graphique</h3>
+            <li>Vertex Shader → Transformation des sommets.</li>
+            <li>Pixel Shader → Calcul des couleurs et de l’éclairage.</li>
+            <li>Rasterization → Conversion des triangles en pixels.</li>
+            <li>Depth & Stencil Testing → Gestion de la profondeur et des masques.</li>
+            <li>Output Merger → Finalisation de l’image avant affichage.</li>
+            <br>
+            
+            <h3>Gestion de la scène et des objets</h3>
+            <li>Entity Component System (ECS) pour une gestion flexible des objets.</li>
+            <li>Chargement des modèles 3D (obj, fbx) via Assimp.</li>
           </div>
 
         </div>
