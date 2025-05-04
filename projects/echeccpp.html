@@ -51,39 +51,62 @@
             </ul>
 
             <p>
-               L’objectif de ce projet était de développer un jeu d’échecs en C++ intégrant une intelligence artificielle basée sur un algorithme de planification pour jouer contre un adversaire humain ou une autre IA. 
-               L’IA devait être capable de prendre des décisions stratégiques en anticipant plusieurs coups à l’avance.
+              Ce projet consiste en un jeu d’échecs complet développé en C++ avec une interface graphique via SFML. 
+              L’objectif principal était de concevoir une <b>intelligence artificielle</b> capable de jouer contre un humain ou une autre IA, en anticipant plusieurs coups à l’avance grâce à un <b>algorithme de planification</b>.
             </p>
+          
             <br>
-            <h3>Architecture du projet</h3>
-            <li>Une matrice 8x8 stockant les pièces.</li>
-            <li>Des méthodes pour placer, déplacer et supprimer des pièces.</li>
-            <li>Une gestion des règles du jeu.</li>
+            <h3>🔧 Architecture du projet</h3>
+            <ul>
+              <li>Utilisation d’une <b>matrice 8x8</b> représentant l’échiquier, où chaque case contient un pointeur vers une pièce ou est vide.</li>
+              <li><b>Méthodes dédiées</b> pour placer, déplacer, capturer ou supprimer des pièces.</li>
+              <li><b>Gestion complète des règles</b> du jeu : déplacements valides, promotions, roque, prise en passant, etc.</li>
+              <li>Implémentation <b>modulaire</b> facilitant l’ajout de nouvelles fonctionnalités ou variantes de règles.</li>
+            </ul>
+          
             <br>
-            
-            <h3>Représentation des pièces</h3>
-            <p>Chaque pièce (roi, reine, tour, fou, cavalier, pion) est représentée par une classe dérivée de Piece, qui implémente :</p>
-            <li>Son type.</li>
-            <li>Ses mouvements valides.</li>
-            <li>Une méthode peutSeDeplacer(Position dest, Echiquier &e) pour vérifier la validité d’un déplacement.</li>
+            <h3>♟️ Représentation des pièces</h3>
+            <p>
+              Chaque pièce du jeu (roi, dame, tour, fou, cavalier, pion) hérite d’une classe abstraite <code>Piece</code> définissant une interface commune.
+            </p>
+            <ul>
+              <li>Chaque sous-classe définit son <b>type</b>, son symbole graphique, et ses <b>mouvements valides</b>.</li>
+              <li>Implémentation d’une méthode <code>peutSeDeplacer(Position dest, Echiquier &e)</code> pour valider les déplacements selon les règles.</li>
+              <li>Utilisation de <b>polymorphisme</b> pour rendre le moteur de jeu extensible et maintenable.</li>
+            </ul>
+          
             <br>
-            
-            <h3>Gestion du jeu</h3>
-            <li>Alternance des joueurs.</li>
-            <li>Détection d’échec et mat.</li>
+            <h3>🎮 Gestion du jeu</h3>
+            <ul>
+              <li><b>Alternance automatique</b> entre joueur blanc et joueur noir.</li>
+              <li>Détection de l’état d’<b>échec</b>, <b>échec et mat</b>, et <b>pat</b>.</li>
+              <li>Affichage des <b>coups possibles</b> pour une meilleure lisibilité côté joueur.</li>
+            </ul>
+          
             <br>
-            
-            <h3>Intelligence Artificielle : Planification des coups</h3>
-            <h4>Minimax</h4>
-            <li>Il évalue chaque position selon une fonction d’évaluation</li>
-            <li>Il simule les coups adverses pour anticiper les meilleures réponses.</li>
-            <h4>Élagage Alpha-Bêta</h4>
-            <li>Table de transposition : Mémorisation des positions déjà analysées pour éviter des calculs redondants.</li>
-            <li>Deep Learning / Réseau de neurones : Pour un IA plus avancée</li>
+            <h3>🧠 Intelligence Artificielle : Planification des coups</h3>
+            <h4>🔍 <b>Algorithme Minimax</b></h4>
+            <ul>
+              <li>L’IA explore les coups possibles sur plusieurs niveaux de profondeur, selon le principe du <b>jeu à somme nulle</b>.</li>
+              <li>Chaque position est évaluée avec une <b>fonction d’évaluation</b> qui prend en compte le matériel, la position des pièces, et les menaces.</li>
+              <li>Implémentation récursive avec gestion de la <b>profondeur</b> et retour du meilleur coup.</li>
+            </ul>
+          
+            <h4>⚡ Élagage Alpha-Bêta</h4>
+            <ul>
+              <li><b>Optimisation</b> du Minimax via l’élagage alpha-bêta pour éviter d'explorer des branches non nécessaires.</li>
+              <li>Réduction significative du <b>temps de calcul</b> sans perte de précision.</li>
+              <li>Permet de chercher plus profondément dans l’arbre de décision avec les mêmes ressources.</li>
+            </ul>
+          
+            <h4>🧠 Avancées IA (En expérimentation)</h4>
+            <ul>
+              <li><strong>Table de transposition</strong> : Stockage des positions déjà analysées via un système de hachage pour accélérer les décisions.</li>
+              <li><strong>Exploration du Deep Learning</strong> : Intégration expérimentale d’un réseau de neurones pour évaluer des positions de manière plus « humaine ».</li>
+              <li>Objectif : combiner <b>heuristiques classiques</b> et <b>modèles entraînés</b> pour créer un moteur hybride.</li>
+            </ul>
           </div>
-
         </div>
-
       </div>
     </div><!-- End Portfolio Details -->
   </main><!-- End #main -->
