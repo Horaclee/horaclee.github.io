@@ -50,44 +50,51 @@
             </ul>
 
             <p>
-              L’objectif était de développer un moteur de jeu personnalisé en C++ en utilisant DirectX 12 comme API graphique. 
-              Le moteur devait gérer le rendu 3D, la gestion des ressources, la physique et d’autres fonctionnalités essentielles pour un moteur de jeu.
+              L'objectif de ce projet était de développer un <strong>moteur de jeu personnalisé</strong> en C++, utilisant <strong>DirectX 12</strong> comme API graphique. Ce moteur devait gérer plusieurs aspects essentiels d'un jeu, tels que le <strong>rendu 3D</strong>, la <strong>gestion des ressources</strong>, la <strong>physique</strong>, et d'autres fonctionnalités de base qui sont au cœur du développement d'un moteur de jeu performant.
             </p>
+          
             <p>
-              Le projet étant en groupe, chaque membre devait travailler sur un module spécifique (ex. : rendu, physique, audio, gestion de scènes, etc.). 
+              Étant un projet de groupe, chaque membre a été chargé de travailler sur un module spécifique, tel que le rendu, la physique, l’audio, la gestion des scènes, et ainsi de suite. Cette approche a permis une spécialisation approfondie tout en maintenant l'intégration de chaque partie du moteur.
             </p>
+          
             <br>
-            <h3>Architecture du moteur</h3>
-            <li>Core : Gestion de la boucle de jeu et des événements.</li>
-            <li>Rendu (Renderer) : Utilisation de DirectX 12 pour l’affichage 3D.</li>
-            <li>Gestion des ressources : Chargement des modèles, textures, shaders.</li>
-            <li>Scripting : Ajout d’un système de scripting pour faciliter le développement.</li>
-            <li>Interface utilisateur (UI) : Création d’un éditeur pour manipuler les objets de la scène.</li>
+            <h3>🛠️ Architecture du moteur</h3>
+            <ul>
+              <li><strong>Core</strong> : La gestion de la boucle de jeu, des événements et des entrées/sorties.</li>
+              <li><strong>Rendu (Renderer)</strong> : Utilisation de <strong>DirectX 12</strong> pour la gestion de l'affichage 3D, y compris la gestion des shaders et du pipeline graphique.</li>
+              <li><strong>Gestion des ressources</strong> : Chargement des modèles 3D, textures, shaders, et autres ressources nécessaires à l'affichage et à l'interaction dans le moteur.</li>
+              <li><strong>Scripting</strong> : Ajout d'un système de scripting pour faciliter le développement de contenu sans nécessiter de recompilation, permettant aux concepteurs de créer et d'ajuster facilement les comportements du jeu.</li>
+              <li><strong>Interface utilisateur (UI)</strong> : Développement d'un éditeur pour manipuler les objets de la scène et contrôler les aspects du jeu en temps réel.</li>
+            </ul>
+          
             <br>
-            
-            <h3>DirectX 12 : Gestion du rendu</h3>
-            <li>Création d’une instance DXGI pour interagir avec le GPU.</li>
-            <li>Création d’un Device pour communiquer avec DirectX 12.</li>
-            <li>Création d’un Swap Chain pour gérer l’affichage des images.</li>
-            <li>Allocation des Command Queues, Command Lists et Command Allocators pour envoyer les commandes au GPU.</li>
-            <li>Mise en place d’un Descripteur de mémoire pour gérer les ressources (textures, buffers).</li>
+            <h3>🎮 DirectX 12 : Gestion du rendu</h3>
+            <ul>
+              <li><strong>Création d'une instance DXGI</strong> : Permet d'interagir directement avec le GPU pour le rendu graphique.</li>
+              <li><strong>Création d'un Device</strong> : Utilisation du Device pour établir la communication avec DirectX 12 et initier le rendu des scènes.</li>
+              <li><strong>Création d'un Swap Chain</strong> : Gestion de l'affichage des images sur l'écran avec un système de double buffering pour éviter les artefacts visuels.</li>
+              <li><strong>Allocation des Command Queues, Command Lists et Command Allocators</strong> : Ces éléments sont utilisés pour envoyer les commandes graphiques au GPU de manière asynchrone et efficace.</li>
+              <li><strong>Mise en place d'un Descripteur de mémoire</strong> : Gestion des ressources telles que les <strong>textures</strong>, <strong>buffers</strong> et autres objets nécessaires pour le rendu.</li>
+            </ul>
+          
             <br>
-            
-            <h3>Pipeline graphique</h3>
-            <li>Vertex Shader → Transformation des sommets.</li>
-            <li>Pixel Shader → Calcul des couleurs et de l’éclairage.</li>
-            <li>Rasterization → Conversion des triangles en pixels.</li>
-            <li>Depth & Stencil Testing → Gestion de la profondeur et des masques.</li>
-            <li>Output Merger → Finalisation de l’image avant affichage.</li>
+            <h3>🔧 Pipeline graphique</h3>
+            <ul>
+              <li><strong>Vertex Shader</strong> → Transformation des sommets dans l’espace de projection.</li>
+              <li><strong>Pixel Shader</strong> → Calcul des couleurs, textures et éclairages sur chaque pixel à afficher à l'écran.</li>
+              <li><strong>Rasterization</strong> → Conversion des triangles définis par les sommets en pixels affichés à l'écran.</li>
+              <li><strong>Depth & Stencil Testing</strong> → Gestion de la profondeur et des masques pour déterminer la visibilité des objets dans la scène.</li>
+              <li><strong>Output Merger</strong> → Finalisation de l’image avant l’affichage final, en combinant les résultats des différentes étapes du pipeline.</li>
+            </ul>
+          
             <br>
-            
-            <h3>Gestion de la scène et des objets</h3>
-            <li>Entity Component System (ECS) pour une gestion flexible des objets.</li>
-            <li>Chargement des modèles 3D (obj, fbx) via Assimp.</li>
+            <h3>🏗️ Gestion de la scène et des objets</h3>
+            <ul>
+              <li><strong>Entity Component System (ECS)</strong> : Utilisation de l'ECS pour une gestion flexible des objets du jeu, permettant d'ajouter ou de modifier facilement des composants.</li>
+              <li><strong>Chargement des modèles 3D</strong> : Utilisation de <strong>Assimp</strong> pour charger des modèles au format <strong>obj</strong> et <strong>fbx</strong>, assurant une large compatibilité avec les outils de création de contenu.</li>
+            </ul>
           </div>
-
         </div>
-
       </div>
     </div><!-- End Portfolio Details -->
   </main><!-- End #main -->
