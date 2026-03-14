@@ -46,7 +46,7 @@
             <h2 style="color:#12d640">Conway's Game of Life</h2>
 
             <ul>
-              <li><strong>Tech Stack</strong>: C#, .NET, WPF, SQLite, GitHub</li>
+              <li><strong>Tech Stack</strong>: C#, .NET 9, WPF, SQLite, Entity Framework Core, API REST</li>
               <li><strong>Source Code</strong>: <a href="https://github.com/Horaclee/GameOfLife" target="_blank">GitHub Link</a></li>
             </ul>
             
@@ -65,8 +65,9 @@
             </p>
           
             <p>
-              Le projet a été développé en <b>C# avec .NET et WPF</b> afin de créer une application desktop interactive permettant de visualiser 
-              et manipuler la simulation en temps réel.
+              Le projet a été développé en <b>C# avec .NET et WPF</b> afin de créer une application desktop interactive permettant de visualiser
+              et manipuler la simulation en temps réel. La simulation peut sauvegarder et charger les états des générations grâce à SQLite,
+              et envoyer les statistiques vers une API GameStats pour analyse.
             </p>
             
             <br>
@@ -94,32 +95,31 @@
           
             <li>Création et suppression de cellules par clic</li>
             <li>Génération aléatoire de configurations</li>
-            <li>Contrôle de la simulation en temps réel</li>
-            <li>Visualisation de l'évolution génération par génération</li>
+            <li>Contrôle de la simulation en temps réel : Start / Pause / Step / Reset / Random</li>
+            <li>Visualisation de l'évolution génération par génération avec compteur de cellules vivantes et mortes</li>
+            <li>Envoi des résultats vers l’API GameStats pour analyse</li>
+            <li>Sauvegarde et chargement des générations via SQLite</li>
           
             <br>
           
             <h3>⚙️ Fonctionnalités techniques</h3>
-          
-            <li>▶️ <b>Start / Pause</b> de la simulation</li>
-            <li>⏭️ <b>Step</b> pour avancer d'une génération</li>
-            <li>🔄 <b>Reset</b> pour réinitialiser la grille</li>
-            <li>🎲 <b>Random</b> pour générer une configuration aléatoire</li>
-            <li>📊 <b>Compteur de générations</b></li>
-            <li>💾 <b>Sauvegarde des générations</b> dans une base de données SQLite</li>
-            <li>📂 <b>Chargement d'états sauvegardés</b></li>
+
+            <li>Architecture MVC : séparation logique du jeu, rendu graphique et timer</li>
+            <li>WPF pour l’interface interactive et responsive</li>
+            <li>Entity Framework Core et SQLite pour persistance des données</li>
+            <li>API REST pour la collecte et l’analyse des résultats</li>
+            <li>Suivi détaillé des générations : cellules vivantes, cellules mortes, dimensions de la grille</li>
+            
+            
           
             <br>
           
             <h3>🧠 Architecture du projet</h3>
           
-            <p>
-              Le projet est structuré en plusieurs modules afin de séparer la logique métier de l'interface graphique.
-            </p>
-          
             <li><b>Core</b> : logique de simulation (Game, Grid, Cell)</li>
             <li><b>WPF UI</b> : rendu graphique de la grille et gestion des interactions</li>
             <li><b>Database Layer</b> : sauvegarde et chargement des générations via SQLite</li>
+            <li><b>API Layer</b> : envoi et récupération des statistiques de jeu</li>
           
             <p>
               Cette architecture modulaire facilite la maintenance du projet et permet d'ajouter facilement 
@@ -129,9 +129,8 @@
             <br>
           
             <p>
-              Ce projet m'a permis d'approfondir mes compétences en <b>développement .NET</b>, 
-              en <b>interface graphique WPF</b> et en <b>architecture logicielle</b>, tout en explorant 
-              un système algorithmique classique de l'informatique.
+              Ce projet m'a permis d'approfondir mes compétences en <b>développement .NET</b>, <b>interface graphique WPF</b>, <b>persistance avec SQLite</b>,
+              et <b>architecture modulaire</b>, tout en explorant un système algorithmique classique et fascinant.
             </p>
           </div>
         </div>
