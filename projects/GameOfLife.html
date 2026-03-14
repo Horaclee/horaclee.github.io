@@ -75,11 +75,13 @@
             <h3>🔁 Simulation et règles du jeu</h3>
             <p>Chaque cellule évolue selon trois règles fondamentales :</p>
             
-            <li>Une cellule vivante avec moins de 2 voisins vivants meurt (sous-population)</li>
-            <li>Une cellule vivante avec 2 ou 3 voisins vivants survit</li>
-            <li>Une cellule vivante ayant plus de trois voisines vivantes meurt (surpopulation). 
-            <li>Une cellule morte avec exactement 3 voisins vivants devient vivante</li>
-          
+            <ul>
+              <li>Une cellule vivante avec moins de 2 voisins vivants meurt (sous-population.)</li>
+              <li>Une cellule vivante avec 2 ou 3 voisins vivants survit</li>
+              <li>Une cellule vivante ayant plus de trois voisines vivantes meurt (surpopulation).
+              <li>Une cellule morte avec exactement 3 voisins vivants devient vivante</li>
+            </ul>
+            
             <p>
               Ces règles simples produisent des comportements émergents fascinants et imprévisibles, 
               illustrant les bases des systèmes complexes et de la vie artificielle.
@@ -92,35 +94,38 @@
             <p>
               L'interface graphique permet à l'utilisateur d'interagir directement avec la grille pour créer et tester différents motifs.
             </p>
-          
-            <li>Création et suppression de cellules par clic</li>
-            <li>Génération aléatoire de configurations</li>
-            <li>Contrôle de la simulation en temps réel : Start / Pause / Step / Reset / Random</li>
-            <li>Visualisation de l'évolution génération par génération avec compteur de cellules vivantes et mortes</li>
-            <li>Envoi des résultats vers l’API GameStats pour analyse</li>
-            <li>Sauvegarde et chargement des générations via SQLite</li>
-          
+            
+            <ul>
+              <li>Création et suppression de cellules par clic</li>
+              <li>Génération aléatoire de configurations</li>
+              <li>Contrôle de la simulation en temps réel : Start / Pause / Step / Reset / Random</li>
+              <li>Visualisation de l'évolution génération par génération avec compteur de cellules vivantes et mortes</li>
+              <li>Envoi des résultats vers l’API GameStats pour analyse</li>
+              <li>Sauvegarde et chargement des générations via SQLite</li>
+            </ul>
+            
             <br>
           
             <h3>⚙️ Fonctionnalités techniques</h3>
-
-            <li>Architecture MVC : séparation logique du jeu, rendu graphique et timer</li>
-            <li>WPF pour l’interface interactive et responsive</li>
-            <li>Entity Framework Core et SQLite pour persistance des données</li>
-            <li>API REST pour la collecte et l’analyse des résultats</li>
-            <li>Suivi détaillé des générations : cellules vivantes, cellules mortes, dimensions de la grille</li>
             
+            <ul>
+              <li>Architecture MVC : séparation logique du jeu, rendu graphique et timer</li>
+              <li>WPF pour l’interface interactive et responsive</li>
+              <li>Entity Framework Core et SQLite pour persistance des données</li>
+              <li>API REST pour la collecte et l’analyse des résultats</li>
+              <li>Suivi détaillé des générations : cellules vivantes, cellules mortes, dimensions de la grille</li>
+            </ul>
             
           
             <br>
           
             <h3>🧠 Architecture du projet</h3>
-          
-            <li><b>Core</b> : logique de simulation (Game, Grid, Cell)</li>
-            <li><b>WPF UI</b> : rendu graphique de la grille et gestion des interactions</li>
-            <li><b>Database Layer</b> : sauvegarde et chargement des générations via SQLite</li>
-            <li><b>API Layer</b> : envoi et récupération des statistiques de jeu</li>
-          
+            <ul>
+              <li><b>Core</b> : logique de simulation (Game, Grid, Cell)</li>
+              <li><b>WPF UI</b> : rendu graphique de la grille et gestion des interactions</li>
+              <li><b>Database Layer</b> : sauvegarde et chargement des générations via SQLite</li>
+              <li><b>API Layer</b> : envoi et récupération des statistiques de jeu</li>
+            </ul>
             <p>
               Cette architecture modulaire facilite la maintenance du projet et permet d'ajouter facilement 
               de nouvelles fonctionnalités comme des patterns prédéfinis ou de l'analyse statistique.
